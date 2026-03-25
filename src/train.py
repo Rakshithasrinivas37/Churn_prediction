@@ -13,8 +13,7 @@ from sklearn.model_selection import StratifiedKFold
 ## Parameters
 C=1.0
 n_splits = 5
-os.makedirs('models', exist_ok=True)
-output_file = f'models/model_C={C}.bin'
+output_file = f'model_C={C}.bin'
 
 ## -------------------------------Data preparation------------------------------
 
