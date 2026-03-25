@@ -38,7 +38,7 @@ jobs:
 
       - name: Verify model file exists
         run: |
-          if [ -f "model_C=1.0.bin" ]; then
+          if [ -f "models/model_C=1.0.bin" ]; then
             echo "✅ Model file created: model_C=1.0.bin"
           else
             echo "❌ Model file not found!"
@@ -49,7 +49,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: churn-model
-          path: model_C=1.0.bin
+          path: models/model_C=1.0.bin
           retention-days: 7
 
   # ─────────────────────────────────────────
@@ -85,7 +85,7 @@ jobs:
 
       - name: Verify model file downloaded
         run: |
-          if [ -f "model_C=1.0.bin" ]; then
+          if [ -f "models/model_C=1.0.bin" ]; then
             echo "✅ Model file ready for testing"
           else
             echo "❌ Model file missing!"
