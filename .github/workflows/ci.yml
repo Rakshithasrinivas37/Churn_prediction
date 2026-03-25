@@ -141,13 +141,13 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t ghcr.io/${{ github.repository_owner }}/churn-prediction:latest .
+          docker build -t ${{ env.IMAGE_NAME }} .
 
       - name: Push Docker image to ghcr.io
         run: |
-          docker push ghcr.io/${{ github.repository_owner }}/churn-prediction:latest
+          docker push ${{ env.IMAGE_NAME }}
 
       - name: Print image URL
         run: |
           echo "🐳 Docker image pushed to:"
-          echo "ghcr.io/${{ github.repository_owner }}/churn-prediction:latest"
+          echo "${{ env.IMAGE_NAME }}"
