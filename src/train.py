@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction import DictVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import roc_auc_score
-from sklearn.model_selection import KFold
+from sklearn.model_selection import StratifiedKFold
 
 ## Parameters
 C=1.0
@@ -71,9 +71,9 @@ scores = []
 print(f"Validation with C={C}")
 
 fold = 0
-kfold = KFold(n_splits=n_splits, shuffle=True, random_state=1)
+kfold = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=1)
 
-for train_idx, val_idx in tqdm(kfold.split(df_full_train), total=n_splits):
+for train_idx, val_idx in tqdm(kfold.split(df_full_train, df_full_train['churn']), total=n_splits):
     df_train = df_full_train.iloc[train_idx]
     df_val = df_full_train.iloc[val_idx]
 
