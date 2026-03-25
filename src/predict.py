@@ -6,7 +6,7 @@ app = Flask('churn')
 ## ---------------------------------------Model Loading-------------------------------------
 
 ## To load the model
-model_file = "model_C=1.0.bin"
+model_file = "models/model_C=1.0.bin"
 with open(model_file, 'rb') as file:
     dv, model = pickle.load(file)
 

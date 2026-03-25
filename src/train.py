@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import pickle
 from tqdm.auto import tqdm
+import os
 
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction import DictVectorizer
@@ -12,7 +13,8 @@ from sklearn.model_selection import StratifiedKFold
 ## Parameters
 C=1.0
 n_splits = 5
-output_file = f'model_C={C}.bin'
+os.makedirs('models', exist_ok=True)
+output_file = f'models/model_C={C}.bin'
 
 ## -------------------------------Data preparation------------------------------
 
