@@ -27,6 +27,7 @@ customer = {
 response = requests.post(url, json=customer)
 
 result = response.json()
+print("Probability Rate: ", result['churn_probability'])
 if result['churn_result'] == True:
     print("Send promotional email to customer")
 else:
