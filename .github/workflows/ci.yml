@@ -84,10 +84,8 @@ jobs:
           name: churn-model             # Download model from Job 1
 
       - name: Verify model file downloaded
-        run: |
-          echo "📂 Listing all files after download:"
-          find . -name "*.bin"  
-          if [ -f "models/model_C=1.0.bin" ]; then
+        run: | 
+          if [ -f "model_C=1.0.bin" ]; then
             echo "✅ Model file ready for testing"
           else
             echo "❌ Model file missing!"
