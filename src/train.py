@@ -24,6 +24,8 @@ string_columns = list(df.dtypes[df.dtypes == 'object'].index)
 for col in string_columns:
     df[col] = df[col].str.lower().str.replace(' ', '_')
 
+df['churn'] = df['churn'].str.strip().str.lower()
+
 ## To convert total charges column values to numeric value
 df.totalcharges = pd.to_numeric(df.totalcharges, errors='coerce')
 df.totalcharges = df.totalcharges.fillna(0)
