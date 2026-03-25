@@ -1,0 +1,1 @@
+ML Project to classify whether a customer is churning or not churning based on the probability score predicted by the Logistic Regression model.
